@@ -10,7 +10,7 @@ const app = express();
 
 // Allow CORS from specific origins
 const corsOptions = {
-  origin: "http://your-frontend-domain.com", // Replace with your frontend domain
+  origin: "https://abhishekkasturay.github.io/OrderAndGo/", // Replace with your frontend domain
   optionsSuccessStatus: 200,
 };
 
