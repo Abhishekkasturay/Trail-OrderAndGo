@@ -1,0 +1,9 @@
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.jsx": [
+      "@parcel/transformer-react-refresh-wrap",
+      "@parcel/transformer-babel"
+    ]
+  }
+}
