@@ -11,7 +11,7 @@ const app = express();
 
 // Allow CORS from specific origins
 const corsOptions = {
-  origin: "https://feastandfare.com", // Replace with your actual domain when deployed
+  origin: "https://abhishekkasturay.github.io/OrderAndGo/", 
   optionsSuccessStatus: 200,
 };
 
