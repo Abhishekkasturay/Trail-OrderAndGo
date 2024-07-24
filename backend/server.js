@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 const authRoutes = require("./routes/auth");
 const trainRoutes = require("./routes/train");
 require("dotenv").config(); // Load environment variables from .env file
@@ -10,7 +11,7 @@ const app = express();
 
 // Allow CORS from specific origins
 const corsOptions = {
-  origin: "https://abhishekkasturay.github.io/OrderAndGo/", // Replace with your frontend domain
+  origin: "https://feastandfare.com", // Replace with your actual domain when deployed
   optionsSuccessStatus: 200,
 };
 
@@ -31,8 +32,17 @@ mongoose
 
 // Use routes
 app.use("/api/auth", authRoutes);
-app.use("/api/trains", trainRoutes); // Add this line
+app.use("/api/trains", trainRoutes);
 
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Handles any requests that don't match the ones above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
