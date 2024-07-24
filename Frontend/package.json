@@ -20,8 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
