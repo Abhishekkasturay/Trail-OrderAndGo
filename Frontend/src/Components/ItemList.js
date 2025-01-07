@@ -7,10 +7,6 @@ const ItemList = ({ items }) => {
   const dispatch = useDispatch();
   const [itemQuantities, setItemQuantities] = useState({});
 
-  // useEffect(() => {
-  //   console.log(itemQuantities);
-  // }, [itemQuantities]);
-
   const handleAddItem = (item) => {
     const itemId = item.card.info.id;
     const currentQuantity = itemQuantities[itemId] || 0;
